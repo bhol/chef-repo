@@ -1,7 +1,7 @@
 # See http://docs.opscode.com/config_rb_knife.html for more information on knife configuration options
 
 current_dir = File.dirname(__FILE__)
-log_level                :info
+log_level                :debug
 log_location             STDOUT
 node_name                "bhol"
 client_key               "#{current_dir}/bhol.pem"
@@ -12,6 +12,7 @@ cache_type               'BasicFile'
 cache_options( :path => "#{ENV['HOME']}/.chef/checksums" )
 cookbook_path            ["#{current_dir}/../cookbooks"]
 knife[:aws_access_key_id] = "#{ENV['AWS_ACCESS_KEY_ID']}"
+knife[:identity_file] = "#{ENV['AWS_IDENTITY_FILE']}"
 knife[:aws_secret_access_key] = "#{ENV['AWS_SECRET_ACCESS_KEY']}"
 knife[:aws_ssh_key_id] = "#{ENV['AWS_SSH_KEY_ID']}"
 knife[:region] = "us-east-1"
