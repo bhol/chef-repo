@@ -9,7 +9,7 @@
 #
 # run sudo apt-get update
 execute "apt-get_update" do
-  command "sudo apt-get update"
+  command "apt-get update"
   action :run
 end
 
